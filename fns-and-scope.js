@@ -7,6 +7,15 @@ var name = 'Tyler';
 
   //Code Here
 
+function isTyler(name) {
+	if (name === "Tyler") {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 //Next problem
 
 
@@ -15,7 +24,9 @@ var name = 'Tyler';
 
 
   //Code Here
-
+function getName() {
+	return(prompt("What is your name?"));
+}
 
 //Next Problem
 
@@ -25,7 +36,10 @@ var name = 'Tyler';
 //then alerts "Welcome, " plus whatever the users name is.
 
   //Code Here
-
+function welcome() {
+	var name = getName();
+	alert("Welcome " + name);
+}
 
 //Next problem
 
@@ -35,7 +49,7 @@ var name = 'Tyler';
 //What is the difference between arguments and parameters?
 
   //Answer Here
-
+A parameter is what is defined in the function definition, an argument is what is passed through the function
 
 //Next problem
 
@@ -45,7 +59,7 @@ var name = 'Tyler';
 
 
   //Answer Here
-
+0, null, undefined, false, "", NaN
 
 
 //Next Problem
@@ -55,15 +69,19 @@ var name = 'Tyler';
 //Create a function called myName that returns your name
 
   //Code Here
-  
+function myName() {
+	return("Daniel")
+}
 
 
 //Now save the function definition of myName into a new variable called newMyName
 
   //Code Here
+var newMyName = myName;
+
 
 //Now alert the result of invoking newMyName
-
+alert(newMyName());
 
 
 //Next problem
@@ -73,9 +91,16 @@ var name = 'Tyler';
 //Create a function called outerFn which returns an anonymous function which returns your name.
 
   //Code Here
+function outerFn() {
+	return function() {
+		return("Daniel");
+	}
+}
 
 //Now save the result of invoking outerFn into a variable called innerFn.
 
   //Code Here
+var innerFn = outerFn;
 
 //Now invoke innerFn.
+innerFn();
