@@ -113,12 +113,14 @@ fnCounter(function(){          //but you can invoke a function as an argument in
 
 
 
-
   var counter = function(){
-    for (var i=1; i<6; i++) {
-      setTimeout(function timer(){console.log(i);}, i*1000 );
+    for (var i=1; i<=5; i++) {
+      setTimeout( function timer(){
+          console.log( i );
+      }, i*1000 );
     }
-  }
+  };
+  counter();
 
 
   // Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. 
@@ -126,20 +128,7 @@ fnCounter(function(){          //but you can invoke a function as an argument in
 
     //Answer Here
 
-// var counter = function() {
-//     for (var i = 1; i < 6; i++) {
-//       var timer = setTimeout(console.log(i), i * 1000);
-//       }
-//     }
-//   }
-
-
-// for(var i = 1; i < 6; i++) {
-//   setTimeout(console.log(i), i * 1000);
-// };
-
-
-// Counter will count for 5 seconds
+Counter will count for 5 seconds
   
 
 
@@ -158,6 +147,20 @@ Wrong, the counter displayed 6 for 5 seconds
     //Code Here
 
 
+var counter = function() {
+  for(var i = 1; i < 6; i++) {
+    func(i);
+  }
+  function func(num) {
+    setTimeout(function timer() {
+      console.log(num);
+    }, num*1000);
+  }
+}
+
+counter();
+
+//is there another way to make a counter where the console log is set to display every second, rather than queueing up all iterations and waiting i * 1000?
 
 //Next Problem
 
@@ -175,5 +178,7 @@ Wrong, the counter displayed 6 for 5 seconds
 
   *Hint: Don't let this fool you. Break down what's really happening here.
 */
+
+var funcArray = [];
 
 
